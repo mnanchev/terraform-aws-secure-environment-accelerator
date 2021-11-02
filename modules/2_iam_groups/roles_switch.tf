@@ -1,5 +1,5 @@
 // create policies in root account
-
+# Copyright 2021 Martin Nanchev
 resource "aws_iam_policy" "role_switch_auditor" {
   name   = "${var.account_name}-auditor"
   policy = format(local.policy_role_switch_template, var.account_id, "reader")

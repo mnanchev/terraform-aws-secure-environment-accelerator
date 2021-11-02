@@ -1,3 +1,4 @@
+# Copyright 2021 Martin Nanchev
 module "organization" {
   source = "../modules/0_organization"
 }

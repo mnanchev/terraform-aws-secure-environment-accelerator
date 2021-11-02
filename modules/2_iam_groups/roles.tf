@@ -17,7 +17,7 @@ resource "aws_iam_role" "developer" {
 }
 
 // Give roles the desired permissions
-
+# Copyright 2021 Martin Nanchev
 resource "aws_iam_role_policy_attachment" "auditor" {
 
   role       = aws_iam_role.auditor.name

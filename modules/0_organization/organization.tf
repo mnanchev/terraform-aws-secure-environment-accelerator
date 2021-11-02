@@ -1,4 +1,5 @@
 # Provides a resource to create an AWS organization.
+# Copyright 2021 Martin Nanchev
 resource "aws_organizations_organization" "organization" {
   # List of AWS service principal names for which
   # you want to enable integration with your organization
