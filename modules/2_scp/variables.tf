@@ -1,6 +1,6 @@
 variable "aws_region_restrictions" {
   type = object({
-    allowed    = list(string)
+    allowed = list(string)
   })
   default     = null
   description = "List of allowed AWS regions and principals that are exempt from the restriction"
@@ -19,6 +19,6 @@ variable "aws_deny_leaving_org" {
 }
 
 variable "organization_id" {
-  type = string
-  description= "ID of the Organization"
+  type        = string
+  description = "ID of the Organization"
 }

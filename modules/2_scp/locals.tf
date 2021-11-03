@@ -3,7 +3,7 @@ locals {
     allowed_regions = {
       enable = var.aws_region_restrictions != null ? true : false
       policy = var.aws_region_restrictions != null ? templatefile("${path.module}/templates/allowed_regions.json.tpl", {
-        allowed    = var.aws_region_restrictions
+        allowed = var.aws_region_restrictions
       }) : null
     }
     cloudtrail_log_stream = {
@@ -20,10 +20,10 @@ locals {
     }
   }
   root_policies_to_merge = [for key, value in local.enabled_root_policies : jsondecode(
-  value.enable == true ? value.policy : "{\"Statement\": []}"
+    value.enable == true ? value.policy : "{\"Statement\": []}"
   )]
 
   root_policies_merged = flatten([
-  for policy in local.root_policies_to_merge : policy
+    for policy in local.root_policies_to_merge : policy
   ])
 }

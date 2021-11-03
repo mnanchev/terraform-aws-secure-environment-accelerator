@@ -1,9 +1,9 @@
 resource "aws_organizations_policy" "sea_root_policies" {
   name = "SecureEnvironmentAccelerator-RootPolicies"
   content = jsonencode({
-    Version   = "2012-10-17"
+    Version = "2012-10-17"
     Statement = templatefile("${path.module}/templates/allowed_regions.json.tpl", {
-      allowed    = var.aws_region_restrictions
+      allowed = var.aws_region_restrictions
     })
   })
   description = "SecureEnvironmentAccelerator enabled Root OU policies"
