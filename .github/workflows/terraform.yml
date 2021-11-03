@@ -81,9 +81,8 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
     # Terraform Security check for vulnerabilities and code smells
-    - name: TFSec check
-      - uses: actions/checkout@v2
-      - uses: triat/terraform-security-scan@v3.0.0
+    - name: Terraform security scan
+      uses: triat/terraform-security-scan@v3.0.0
 
       # Generates an execution plan for Terraform
     - name: Terraform Plan
