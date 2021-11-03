@@ -15,13 +15,4 @@ module "organization_accounts_structure" {
   parent          = module.organization.root_id
 }
 
-#module "iam_groups" {
-#  source = "../modules/2_iam_groups"
-#  account_id = ""
-#  account_name = ""
-#  auditor_users = ""
-#  developer_users = ""
-#  owner_users = ""
-#}
-
 

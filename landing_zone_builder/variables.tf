@@ -45,7 +45,7 @@ variable "organization_structure" {
 }
 
 variable "customer" {
-  default = "rogon"
+  default = "probkoTestov"
 }
 
 variable "profile" {
