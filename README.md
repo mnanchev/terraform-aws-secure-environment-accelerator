@@ -97,6 +97,7 @@ cd `terraform-aws-secure-environment-accelerator\landing_zone_builder`
 terraform init && terraform apply --auto-approve
 ```
 A Github Action was configured to perform terraform fmt check, terraform init and terraform plan
+![Github Action](github_actions.png)
 ```yaml
 name: 'Secure Environment Accelerator'
 
