@@ -1,7 +1,7 @@
 # Description of terraform-aws-secure-environment-accelerator solution
 The AWS Secure Environment Accelerator is a tool designed to help deploy and operate secure multi-account, multi-region AWS environments on an ongoing basis. The power of the solution is the configuration file which enables the completely automated deployment of customizable architectures within AWS without changing a single line of code.
 ## Architecture
-![Architecture](/Users/martin.nanchev@adesso.bg/Documents/terraform-aws-secure-environment-accelerator/terraform-aws-secure-environment-accelerator/terraform_secure_environment_accelerator.jpg)
+![Architecture](terraform_secure_environment_accelerator.jpg)
 ### The module create AWS organisation which consist of:
 #### 1. Root account, which creates 9 OUs
 - Operations
