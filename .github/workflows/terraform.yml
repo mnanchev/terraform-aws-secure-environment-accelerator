@@ -80,8 +80,12 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
-      
-    # Generates an execution plan for Terraform
+    # Terraform Security check for vulnerabilities and code smells
+    - name: TFSec check
+      - uses: actions/checkout@v2
+      - uses: triat/terraform-security-scan@v3.0.0
+
+      # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan
       # On push to main, build or change infrastructure according to Terraform configuration files
