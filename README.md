@@ -137,12 +137,13 @@ jobs:
       # Checks that all Terraform configuration files adhere to a canonical format
       - name: Terraform Format
         run: terraform fmt -check
+      # Terraform Security check for vulnerabilities and code smells
+      - name: Terraform security scan
+        uses: triat/terraform-security-scan@v3.0.0
 
-      # Generates an execution plan for Terraform
+        # Generates an execution plan for Terraform
       - name: Terraform Plan
         run: terraform plan
-
-
 ```
 # Future work
 1. Add centralised Logging(Cloudtrail, CW, Config aggregator, etc to Logging account)
