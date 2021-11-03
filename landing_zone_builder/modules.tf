@@ -15,4 +15,13 @@ module "organization_accounts_structure" {
   parent          = module.organization.root_id
 }
 
+module "service_control_policy"{
+  source = "../modules/2_scp"
+  aws_deny_disabling_security_hub = true
+  aws_deny_leaving_org = true
+  organization_id = module.organization.organization_id
+  aws_region_restrictions = {
+    allowed = [var.region]
+  }
+}
 

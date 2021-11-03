@@ -14,6 +14,7 @@ variable "aws_service_access_principals" {
     "servicequotas.amazonaws.com",
     "sso.amazonaws.com",
     "ssm.amazonaws.com",
+    "iam.amazonaws.com",
     "tagpolicies.tag.amazonaws.com",
     "reporting.trustedadvisor.amazonaws.com"
   ]
