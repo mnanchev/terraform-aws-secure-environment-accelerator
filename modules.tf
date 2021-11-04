@@ -64,5 +64,3 @@ module "vpc_perimeter" {
     Account     = var.organization_structure.perimeter.cidr
   }
 }
-
-
