@@ -14,8 +14,8 @@ resource "aws_organizations_account" "account" {
     iam_user_access_to_billing]
   }
   tags = {
-    Name = var.account_name
-    "terraform-managed" : true
+    Name      = var.account_name
+    Terraform = true
   }
 }
 

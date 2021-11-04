@@ -1,10 +1,8 @@
 resource "aws_organizations_policy" "sea_root_policies" {
-  name = "SecureEnvironmentAccelerator-RootPolicies"
+  name = "secure-environment-accelerator-guardrails"
   content = jsonencode({
-    Version = "2012-10-17"
-    Statement = templatefile("${path.module}/templates/allowed_regions.json.tpl", {
-      allowed = var.aws_region_restrictions
-    })
+    Version   = "2012-10-17"
+    Statement = local.root_policies_merged
   })
   description = "SecureEnvironmentAccelerator enabled Root OU policies"
 }
