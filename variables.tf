@@ -1,10 +1,15 @@
 variable "organization_structure" {
-  type = map(any)
+  type = map(map(any))
   default = {
     networking = {
       email = "martin2754@gmail.com"
       ou    = "Networking"
       cidr  = "10.1.0.0/16"
+    }
+    perimeter = {
+      email = "martin2754@gmail.com"
+      ou    = "Perimeter"
+      cidr  = "10.0.0.0/16"
     }
     security = {
       email = "martin2754@gmail.com"
@@ -16,11 +21,6 @@ variable "organization_structure" {
       ou    = "Logging"
       cidr  = ""
     }
-    perimeter = {
-      email = "martin2754@gmail.com"
-      ou    = "Perimeter"
-      cidr  = "10.0.0.0/16"
-    }
     operations = {
       email = "martin2754@gmail.com"
       ou    = "Operations"
@@ -30,31 +30,23 @@ variable "organization_structure" {
       email = "martin2754@gmail.com"
       ou    = "Backend"
       cidr  = ""
-
     }
-
     frontend = {
       email = "martin2754@gmail.com"
       ou    = "Frontend"
       cidr  = ""
-
     }
     database = {
       email = "martin2754@gmail.com"
       ou    = "Database"
       cidr  = ""
-
     }
     ai = {
       email = "martin2754@gmail.com"
       ou    = "AI"
       cidr  = ""
-
     }
-
-
   }
-
 }
 
 variable "customer" {
