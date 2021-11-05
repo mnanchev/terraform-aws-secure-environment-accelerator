@@ -27,6 +27,8 @@ The configuration of the organization structure is performed through the variabl
 has the type of map.
 The Map consist of keys containing the accounts. 
 Each account has organizational unit `ou` and `email` and is positioned inside the OU. 
+`create_ou` is important if you want to reuse existing OUs, please set it to false and pass ou_id to the `./modules/1_account` 
+module
 `cidr` is used for vpc cidr. Terraform calculates the subnets automatically. An example for 10.1.0.0/16:
 ```
 tolist([
