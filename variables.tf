@@ -14,48 +14,6 @@ variable "organization_structure" {
       cidr      = "10.0.0.0/16"
       create_ou = "true"
     }
-    #    security = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "Security"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
-    #    logging = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "Logging"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
-    #    operations = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "Operations"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
-    #    backend = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "Backend"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
-    #    frontend = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "Frontend"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
-    #    database = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "Database"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
-    #    ai = {
-    #      email     = "martin2754@gmail.com"
-    #      ou        = "AI"
-    #      cidr      = ""
-    #      create_ou = "true"
-    #    }
   }
 }
 

@@ -27,76 +27,47 @@ The configuration of the organization structure is performed through the variabl
 has the type of map.
 The Map consist of keys containing the accounts. 
 Each account has organizational unit `ou` and `email` and is positioned inside the OU. 
+`cidr` is used for vpc cidr. Terraform calculates the subnets automatically. An example for 10.1.0.0/16:
+```
+tolist([
+"10.1.0.0/24",
+"10.1.1.0/24",
+"10.1.2.0/24",
+"10.1.3.0/24",
+"10.1.4.0/28",
+"10.1.4.16/28",
+])
+```
+The first three are defined as public and the last three as private subnets
 The email is used for the billing details:
 ```hcl
 # EXAMPLE with nested accounts inside Backend organisational unit, which has production, integration and uat
 variable "organization_structure" {
-  type = map(any)
+  type        = map(map(any))
+  description = "The variable controls how the OUs and accounts will created\n The key of the map are the accounts, which will be created inside the ou, which is added as parameter"
   default = {
     networking = {
-      email = "martin2754@gmail.com"
-      ou    = "Networking"
-    }
-    security = {
-      email = "martin2754@gmail.com"
-      ou    = "Security"
-    }
-    logging = {
-      email = "martin2754@gmail.com"
-      ou    = "Logging"
+      email     = "martin.nanchev@adesso.bg"
+      ou        = "Networking"
+      cidr      = "10.1.0.0/16"
+      create_ou = "true"
     }
     perimeter = {
-      email = "martin2754@gmail.com"
-      ou    = "Perimeter"
+      email     = "martin2754@icloud.com"
+      ou        = "Perimeter"
+      cidr      = "10.0.0.0/16"
+      create_ou = "true"
     }
-    operations = {
-      email = "martin2754@gmail.com"
-      ou    = "Operations"
-    }
-    backend = {
-      email = "martin2754@gmail.com"
-      ou    = "Backend"
-    }
-
-    backend-integration = {
-      email = "martin2754@gmail.com"
-      ou    = "Backend"
-    }
-
-    backend-uat = {
-      email = "martin2754@gmail.com"
-      ou    = "Backend"
-    }
-
-    backend-production = {
-      email = "martin2754@gmail.com"
-      ou    = "Backend"
-    }
-
-    frontend = {
-      email = "martin2754@gmail.com"
-      ou    = "Frontend"
-    }
-    database = {
-      email = "martin2754@gmail.com"
-      ou    = "Database"
-    }
-    ai = {
-      email = "martin2754@gmail.com"
-      ou    = "AI"
-    }
-
-
   }
-
 }
 ```
 # Deployment
 ```bash
-cd `terraform-aws-secure-environment-accelerator\landing_zone_builder`
+cd `terraform-aws-secure-environment-accelerator`
 terraform init && terraform apply --auto-approve
 ```
 A Github Action was configured to perform terraform fmt check, terraform init and terraform plan
+Terraform apply was commented out, but it was working during testing.
 ![Github Action](github_actions.png)
 ```yaml
 name: 'Secure Environment Accelerator'

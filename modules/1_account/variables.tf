@@ -1,48 +1,40 @@
 variable "aws_region" {
-  type = string
-}
-variable "aws_cli_profile" {
-  type = string
+  type        = string
+  description = "AWS Region"
 }
 
 variable "customer" {
-  type = string
+  type        = string
+  description = "Customer name"
 }
 
 variable "email" {
-  type = string
+  type        = string
+  description = "Email for the account creation"
 }
 
 variable "account_name" {
-  type = string
+  type        = string
+  description = "Name of teh account that will be created"
 }
 
-variable "reader_users" {
-  type    = list(string)
-  default = []
-}
-variable "dev_users" {
-  type    = list(string)
-  default = []
-}
-variable "owner_users" {
-  type    = list(string)
-  default = []
+variable "ou" {
+  description = "Name of organizational unit"
 }
 
-variable "air_traffic_control_role" {
-  type    = string
-  default = "AirTrafficControl"
+variable "parent" {
+  description = "This is the parent for the OU creation"
 }
 
-variable "ou" {}
-
-variable "parent" {}
-
-variable "create_ou" {}
+variable "create_ou" {
+  description = "If the an OU should be created or you will specify ou_id in which the account will live"
+}
 
 variable "ou_id" {
-  default = ""
+  default     = ""
+  description = "Parent Organizational Unit ID or Root ID for the account. Defaults to the Organization default Root ID. A configuration must be present for this argument to perform drift detection"
 }
 
-variable "admin_role" {}
+variable "admin_role" {
+  description = "The admin role that will be created in other accounts. It is possible to assume it and access the child accounts from root"
+}

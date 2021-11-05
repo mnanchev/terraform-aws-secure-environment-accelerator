@@ -33,15 +33,15 @@ provider "aws" {
 #  }
 #}
 #
-#provider "aws" {
-#  alias   = "perimeter"
-#  region  = var.region
-#  profile = var.profile
-#  assume_role {
-#    # Switch into the account we created in this module
-#    role_arn = "arn:aws:iam::${local.all_ids[lower(var.organization_structure.perimeter.ou)]}:role/${local.air_traffic_control[lower(var.organization_structure.perimeter.ou)]}"
-#  }
-#}
+provider "aws" {
+  alias   = "perimeter"
+  region  = var.region
+  profile = var.profile
+  assume_role {
+    # Switch into the account we created in this module
+    role_arn = "arn:aws:iam::${local.all_ids[lower(var.organization_structure.perimeter.ou)]}:role/${local.air_traffic_control[lower(var.organization_structure.perimeter.ou)]}"
+  }
+}
 #
 #provider "aws" {
 #  alias   = "operations"

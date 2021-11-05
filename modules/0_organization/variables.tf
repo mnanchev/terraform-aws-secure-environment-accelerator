@@ -17,10 +17,11 @@ variable "aws_service_access_principals" {
     "tagpolicies.tag.amazonaws.com",
     "reporting.trustedadvisor.amazonaws.com"
   ]
+  description = " List of AWS service principal names for which you want to enable integration with your organization. This is typically in the form of a URL, such as service-abbreviation.amazonaws.com"
 }
 
 variable "features" {
-  type    = string
-  default = "ALL"
-
+  type        = string
+  default     = "ALL"
+  description = "(Optional) Specify \"ALL\" (default) or \"CONSOLIDATED_BILLING\"."
 }
