@@ -5,7 +5,7 @@ resource "aws_organizations_organization" "organization" {
   # you want to enable integration with your organization
   aws_service_access_principals = var.aws_service_access_principals
   feature_set                   = "ALL"
-  enabled_policy_types = ["SERVICE_CONTROL_POLICY"]
+  enabled_policy_types          = ["SERVICE_CONTROL_POLICY"]
 }
 
 output "root_id" {

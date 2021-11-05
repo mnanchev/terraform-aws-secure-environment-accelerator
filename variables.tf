@@ -8,12 +8,12 @@ variable "organization_structure" {
       cidr      = "10.1.0.0/16"
       create_ou = "true"
     }
-        perimeter = {
-          email     = "martin2754@icloud.com"
-          ou        = "Perimeter"
-          cidr      = "10.0.0.0/16"
-          create_ou = "true"
-        }
+    perimeter = {
+      email     = "martin2754@icloud.com"
+      ou        = "Perimeter"
+      cidr      = "10.0.0.0/16"
+      create_ou = "true"
+    }
     #    security = {
     #      email     = "martin2754@gmail.com"
     #      ou        = "Security"
@@ -72,6 +72,6 @@ variable "region" {
 }
 
 
-variable admin_role{
+variable "admin_role" {
   default = "AirTrafficControl"
 }
