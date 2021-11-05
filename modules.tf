@@ -29,25 +29,25 @@ module "service_control_policy" {
 }
 
 
-module "vpc_networking" {
-  source = "./modules/3_vpc"
-  providers = {
-    aws = aws.networking
-  }
-  depends_on = [module.organization_accounts_structure]
-  enable_nat_gateway = false
-  enable_vpn_gateway = false
-  name               = "${var.customer}-${local.networking_account}-vpc"
-  cidr               = var.organization_structure.networking.cidr
-  private_subnets    = slice(cidrsubnets(var.organization_structure.networking.cidr, 8, 8, 8, 8, 12, 12), 3, length(cidrsubnets(var.organization_structure.networking.cidr, 8, 8, 8, 8, 12, 12)))
-  public_subnets     = slice(cidrsubnets(var.organization_structure.networking.cidr, 8, 8, 8, 8, 12, 12), 0, 3)
-  azs                = [for zone in ["a", "b", "c"] : join("", [var.region, zone])]
-  tags = {
-    Terraform   = "true"
-    Environment = "production"
-    Account     = local.networking_account
-  }
-}
+#module "vpc_networking" {
+#  source = "./modules/3_vpc"
+#  providers = {
+#    aws = aws.networking
+#  }
+#  depends_on = [module.organization_accounts_structure]
+#  enable_nat_gateway = false
+#  enable_vpn_gateway = false
+#  name               = "${var.customer}-${local.networking_account}-vpc"
+#  cidr               = var.organization_structure.networking.cidr
+#  private_subnets    = slice(cidrsubnets(var.organization_structure.networking.cidr, 8, 8, 8, 8, 12, 12), 3, length(cidrsubnets(var.organization_structure.networking.cidr, 8, 8, 8, 8, 12, 12)))
+#  public_subnets     = slice(cidrsubnets(var.organization_structure.networking.cidr, 8, 8, 8, 8, 12, 12), 0, 3)
+#  azs                = [for zone in ["a", "b", "c"] : join("", [var.region, zone])]
+#  tags = {
+#    Terraform   = "true"
+#    Environment = "production"
+#    Account     = local.networking_account
+#  }
+#}
 #
 #module "vpc_perimeter" {
 #  source = "./modules/3_vpc"
