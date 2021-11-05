@@ -162,3 +162,11 @@ jobs:
 
 No outputs.
 <!-- END_TF_DOCS -->
+
+# Credits
+
+For VPC and transit gateway implementations I used following modules:
+https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
+https://registry.terraform.io/modules/terraform-aws-modules/transit-gateway/aws/latest
+Spetial thanks to [@Anton Babenko]
+
