@@ -32,7 +32,7 @@ module "vpc_networking" {
     aws = aws.networking
   }
   depends_on         = [module.organization_accounts_structure]
-  enable_nat_gateway = false
+  enable_nat_gateway = true
   enable_vpn_gateway = false
   name               = "${var.customer}-${local.networking_account}-vpc"
   cidr               = var.organization_structure.networking.cidr
