@@ -1,7 +1,7 @@
 locals {
   enabled_root_policies = {
     allowed_regions = {
-      enable = var.aws_region_restrictions != null ? true : false
+      enable = true
       policy = file("${path.module}/templates/allowed_regions.json")
     }
     cloudtrail_log_stream = {
