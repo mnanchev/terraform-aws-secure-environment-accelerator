@@ -38,3 +38,11 @@ variable "air_traffic_control_role" {
 variable "ou" {}
 
 variable "parent" {}
+
+variable "create_ou" {}
+
+variable "ou_id" {
+  default = ""
+}
+
+variable "admin_role" {}

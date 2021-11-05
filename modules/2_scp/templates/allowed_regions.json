@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RegionRestriction",
+      "Effect": "Deny",
+      "NotAction": [
+        "autoscaling:*",
+        "aws-marketplace:*",
+        "budgets:*",
+        "cloudfront:*",
+        "ec2:Describe*",
+        "globalaccelerator:*",
+        "iam:*",
+        "importexport:*",
+        "lambda:*",
+        "kms:*",
+        "organizations:*",
+        "route53:*",
+        "route53resolver:*",
+        "sts:*",
+        "support:*",
+        "waf:*",
+        "devicefarm:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestedRegion": [
+            "us-east-1"
+          ]
+        }
+      }
+    }
+  ]
+}
