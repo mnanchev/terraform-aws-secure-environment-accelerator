@@ -22,6 +22,7 @@ module "service_control_policy" {
   aws_deny_disabling_security_hub = true
   aws_deny_leaving_org            = true
   organization_id                 = module.organization.organization_id
+  allowed_region                  = var.region
 }
 
 

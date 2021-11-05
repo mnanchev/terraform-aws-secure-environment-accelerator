@@ -16,3 +16,8 @@ variable "organization_id" {
   type        = string
   description = "ID of the Organization"
 }
+
+variable "allowed_region" {
+  type        = string
+  description = "Allowed regions to create resources in"
+}

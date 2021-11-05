@@ -2,7 +2,7 @@ locals {
   enabled_root_policies = {
     allowed_regions = {
       enable = true
-      policy = file("${path.module}/templates/allowed_regions.json")
+      policy = templatefile("${path.module}/templates/allowed_regions.json", { allowed_regions = var.allowed_region })
     }
     cloudtrail_log_stream = {
       enable = true
